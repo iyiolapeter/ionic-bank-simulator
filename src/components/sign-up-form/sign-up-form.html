@@ -1,0 +1,37 @@
+<div class="sign-up-form">
+
+  <div class="sign-up-form__fields">
+
+    <div *ngIf="stepNumber === 1">
+      <div class="form-group-label">Contact information</div>
+      <div class="sign-up-form__input">
+        <input type="text" [(ngModel)]="form.firstName" class="input sign-up-form__input-inner" placeholder="First name *">
+      </div>
+      <div class="sign-up-form__input">
+        <input type="text" [(ngModel)]="form.lastName" class="input sign-up-form__input-inner" placeholder="Last name *">
+      </div>
+      <div class="sign-up-form__input">
+        <input type="tel" [(ngModel)]="form.phoneNumber" class="input sign-up-form__input-inner" placeholder="Phone number *">
+      </div>
+
+      <button ion-button large round block (click)="nextStep()">Next step</button>
+    </div>
+
+    <div *ngIf="stepNumber >= 2">
+      <div class="form-group-label">Login information</div>
+      <div class="sign-up-form__input">
+        <input type="email" [(ngModel)]="form.email" class="input sign-up-form__input-inner" placeholder="Email *">
+      </div>
+      <div class="sign-up-form__input">
+        <input type="password" [(ngModel)]="form.password" class="input sign-up-form__input-inner" placeholder="Password *">
+      </div>
+      <div class="sign-up-form__input">
+        <input type="password" [(ngModel)]="form.confirmPassword" class="input sign-up-form__input-inner" placeholder="Confirm password *">
+      </div>
+
+      <button ion-button large round block (click)="signUp()">Let's go</button>
+    </div>
+
+  </div>
+
+</div>

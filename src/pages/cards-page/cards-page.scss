@@ -1,0 +1,15 @@
+page-cards {
+  background: #fff;
+  .cards {
+    background: #fff;
+
+    &__not-yet {
+      border-radius: 5px;
+      background: rgba(232, 232, 232, 0.52);
+      padding: 20px;
+      font-size: 1.5em;
+      color: #333;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>My deposits</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-refresher (ionRefresh)="refresh($event)">
+    <ion-refresher-content pullingText="Pull to refresh"
+                           refreshingText="Updating...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <div class="deposits" padding>
+    <bank-deposit [deposit]="deposit" *ngFor="let deposit of deposits" (click)="openDeposit(deposit)"></bank-deposit>
+
+    <div class="deposits__not-yet" *ngIf="!deposits || deposits.length === 0">You have no deposits yet</div>
+  </div>
+
+  <ion-fab bottom right #fab>
+    <button ion-fab>
+      <ion-icon name="add"></ion-icon>
+    </button>
+    <ion-fab-list side="top">
+      <button ion-fab (click)="itemTapped('new-deposit', fab)">
+        <ion-icon name="cash"></ion-icon>
+      </button>
+    </ion-fab-list>
+  </ion-fab>
+
+</ion-content>

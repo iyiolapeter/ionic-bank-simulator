@@ -1,0 +1,20 @@
+<ion-content>
+
+  <div class="welcome-page-content">
+
+    <h1>Welcome!</h1>
+
+    <div class="sign-in">
+      <sign-in-form (formSubmitted)="formSubmitted($event)"></sign-in-form>
+    </div>
+
+  </div>
+
+  <div class="sign-up-button">
+    <button ion-button icon-right clear block large (click)="goToSignUp($event)">
+      Sign Up
+      <ion-icon name="arrow-forward"></ion-icon>
+    </button>
+  </div>
+
+</ion-content>

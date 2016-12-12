@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Transfer money</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="transfers">
+    <ion-card>
+
+      <ion-card-header style="line-height: 1.6em;">
+        <div [ngSwitch]="transferType">
+          <div *ngSwitchCase="'self'">
+            <h2>Transfer money between your accounts</h2>
+          </div>
+          <div *ngSwitchCase="'client'">
+            <h2>Transfer money to another client</h2>
+          </div>
+        </div>
+        <div class="card-detail-info__balance">You have <b>{{fromAccount.currency.symbol}}{{fromAccount.balance.toFixed(fromAccount.currency.exponent) | money}}</b></div>
+        <div class="card-detail-info__account-number">From account number: <b>{{fromAccount.number}}</b></div>
+      </ion-card-header>
+
+      <ion-segment [(ngModel)]="transferType" color="primary">
+        <ion-segment-button value="self">
+          My Accounts
+        </ion-segment-button>
+        <ion-segment-button value="client">
+          Client Transfer
+        </ion-segment-button>
+      </ion-segment>
+
+      <div [ngSwitch]="transferType">
+        <div *ngSwitchCase="'self'">
+          <div *ngIf="selfTransferForm">
+
+            <ion-list>
+              <ion-item>
+                <ion-label>To your account</ion-label>
+                <ion-select [(ngModel)]="selfTransferForm.to" interface="action-sheet">
+                  <ion-option *ngFor="let account of myAccounts" value="{{account.number}}">
+                    {{account.title}}
+                    ({{account.currency.symbol}}{{account.balance}}) — {{account.number.toString().slice(0, 4)}}***
+                  </ion-option>
+                </ion-select>
+              </ion-item>
+
+              <ion-item>
+                <ion-label color="primary" stacked>Amount</ion-label>
+                <ion-input type="number" [(ngModel)]="selfTransferForm.amount" placeholder="Money amount"></ion-input>
+              </ion-item>
+
+              <ion-item style="text-align: right">
+                <button ion-button round (click)="transfer($event)" medium [disabled]="transferSent">Transfer</button>
+              </ion-item>
+            </ion-list>
+
+          </div>
+        </div>
+
+        <div *ngSwitchCase="'client'">
+
+          <ion-list>
+            <ion-item>
+              <ion-label color="primary" stacked>To another account</ion-label>
+              <ion-input type="text" [(ngModel)]="clientTransferForm.to" placeholder="Card or account number"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label color="primary" stacked>Amount</ion-label>
+              <ion-input type="number" [(ngModel)]="clientTransferForm.amount" placeholder="Money amount"></ion-input>
+            </ion-item>
+
+            <ion-item style="text-align: right">
+              <button ion-button round (click)="transfer($event)" medium [disabled]="transferSent">Transfer</button>
+            </ion-item>
+          </ion-list>
+
+        </div>
+      </div>
+
+    </ion-card>
+  </div>
+
+</ion-content>

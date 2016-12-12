@@ -1,0 +1,32 @@
+@import "../../theme/mixin";
+
+sign-in-form {
+  background: transparent;
+  display: block;
+  transform: translateZ(0);
+
+  .sign-in-form__input {
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    input {
+      background: transparentize(#fff, .85) !important;
+      padding: 15px 20px;
+      border-radius: 50px;
+      border: none;
+      width: 100%;
+      color: #fff;
+      transition: all .1s ease-in-out;
+      height: 100%;
+      font-size: 1.3em;
+
+      @include input-placeholder-color(transparentize(#fff, .2), (focus: transparentize(#fff, .1), active: #fff), false) {
+        transition: all .2s ease;
+      }
+
+      &:focus {
+        background: transparentize(#fff, .7) !important;
+      }
+    }
+  }
+}

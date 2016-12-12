@@ -1,0 +1,40 @@
+page-welcome {
+  font-size: 1.2em !important;
+
+  ion-content {
+    background: #F7475D url(../assets/image/background-app.png) no-repeat center center / cover;
+  }
+
+  .sign-in {
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  .sign-up-button {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background: rgba(#fff, .1);
+
+    button {
+      color: rgba(#fff, .9) !important;
+    }
+  }
+
+  .welcome-page-content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+
+  h1 {
+    color: rgba(#fff, .9);
+    text-align: center;
+    width: 100%;
+    font-size: 3em;
+  }
+}

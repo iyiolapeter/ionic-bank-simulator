@@ -1,0 +1,14 @@
+<div class="card-detail-info">
+  <div class="card-detail-info__inner">
+
+    <div class="card-detail-info__balance">{{card.Currency.symbol}}{{card.balance.toFixed(card.Currency.exponent) | money}}</div>
+    <div class="card-detail-info__account-number">Account number: {{card.number}}</div>
+
+    <div class="card-detail-info__actions">
+      <button ion-button round class="card-detail-info__action-button" (click)="transferMoney()">
+        <ion-icon name="swap"></ion-icon>
+      </button>
+    </div>
+
+  </div>
+</div>

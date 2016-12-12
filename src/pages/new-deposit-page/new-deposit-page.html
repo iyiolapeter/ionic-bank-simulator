@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Create new deposit</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div class="new-deposit-page">
+    <ion-list>
+
+      <p>1 month = 5 minutes</p>
+
+      <ion-item>
+        <ion-label color="primary" stacked>Deposit Title</ion-label>
+        <ion-input type="text" [(ngModel)]="form.title" placeholder="Enter your deposit title"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Period</ion-label>
+        <ion-select [(ngModel)]="form.timeFrame" interface="action-sheet">
+          <ion-option *ngFor="let frame of timeFrames" value="{{frame.value}}">{{frame.title}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Currency</ion-label>
+        <ion-select [(ngModel)]="form.currencyNumber" interface="action-sheet">
+          <ion-option *ngFor="let currency of currencies" value="{{currency.number}}">{{currency.code}} ({{currency.symbol}})</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item style="text-align: right">
+        <button ion-button round (click)="create($event)" medium>Create Deposit</button>
+      </ion-item>
+
+    </ion-list>
+  </div>
+
+</ion-content>

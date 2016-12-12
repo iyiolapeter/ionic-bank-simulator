@@ -1,0 +1,15 @@
+<div class="bank-card">
+  <div class="bank-card__inner" padding>
+    <div class="bank-card__title">{{card?.title}}</div>
+    <div class="bank-card__balance">{{card?.Currency.symbol}}{{card?.balance.toFixed(card?.Currency.exponent) | money}}</div>
+    <div class="bank-card__images">
+      <div class="bank-card__scheme-icon"></div>
+      <div class="bank-card__bs-icon {{card?.Cards[0]?.ccType.toLowerCase()}}"></div>
+    </div>
+    <div class="bank-card__cc-number">{{formatNumber(card?.Cards[0]?.ccNumber)}}</div>
+    <div class="bank-card__info">
+      <div class="bank-card__cc-holder">{{card?.Cards[0]?.ccHolder}}</div>
+      <div class="bank-card__cc-valid-thru">{{card?.Cards[0]?.thru}}</div>
+    </div>
+  </div>
+</div>

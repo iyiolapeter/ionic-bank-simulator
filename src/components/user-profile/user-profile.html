@@ -1,0 +1,13 @@
+<div class="user-profile" *ngIf="user">
+  <div class="user-profile__inner">
+    <div class="user-profile__wrap" padding>
+      <div class="user-profile__photo-wrap">
+        <div class="user-profile__photo" [ngStyle]="{'background-image': 'url(' + user?.photo + ')'}"></div>
+      </div>
+
+      <div class="user-profile__fullname">{{user?.fullName}}</div>
+      <div class="user-profile__email">{{user?.email}}</div>
+      <div class="user-profile__uuid">{{user?.uuid}}</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+account-history-item {
+  background: #fff;
+  width: 100%;
+  display: block;
+
+  .account-history-item {
+
+    &__change {
+      font-size: 1.2em;
+      line-height: 1.6em;
+
+      &.income {
+        color: #35a94f;
+      }
+      &.outgoing {
+        color: #333;
+      }
+    }
+
+    &__title {
+      font-weight: 600;
+      font-size: 1.1em;
+      line-height: 1.5em;
+    }
+
+    &__account-number {
+      line-height: 1.5em;
+    }
+  }
+}

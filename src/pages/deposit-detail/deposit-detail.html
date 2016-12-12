@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{deposit.title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-refresher (ionRefresh)="refresh($event)">
+    <ion-refresher-content pullingText="Pull to refresh"
+                           refreshingText="Please wait...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <deposit-detail-info [deposit]="deposit" (onAction)="doAction($event)"></deposit-detail-info>
+  <account-history [history]="accountHistory"></account-history>
+
+  <ion-infinite-scroll (ionInfinite)="doInfiniteScroll($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>

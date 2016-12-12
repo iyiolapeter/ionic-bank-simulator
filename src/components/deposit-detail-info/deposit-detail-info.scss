@@ -1,0 +1,37 @@
+deposit-detail-info {
+  .deposit-detail-info {
+    color: #fff;
+    background: #f44f66;
+    background: -moz-linear-gradient(top, #f44f66 0%, #ef8367 100%);
+    background: -webkit-linear-gradient(top, #f44f66 0%,#ef8367 100%);
+    background: linear-gradient(to bottom, #f44f66 0%,#ef8367 100%);
+
+    &__inner {
+      padding: 30px 20px;
+    }
+
+    &__balance {
+      font-size: 3em;
+    }
+
+    &__account-number {
+      font-size: 1.2em;
+      line-height: 3em;
+    }
+
+    &__actions {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      margin-top: 21px;
+    }
+
+    &__action-button {
+      height: 50px;
+      width: 50px;
+      box-shadow: none;
+      padding: 0;
+      border: 2px solid rgba(255,255,255,.4);
+    }
+  }
+}

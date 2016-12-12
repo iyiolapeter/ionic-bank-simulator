@@ -1,0 +1,16 @@
+<div class="sign-in-form">
+
+  <div class="sign-in-form__fields">
+
+    <div class="sign-in-form__input">
+      <input type="text" [(ngModel)]="form.login" class="input sign-in-form__input-inner" placeholder="Email or Phone number">
+    </div>
+    <div class="sign-in-form__input">
+      <input type="password" [(ngModel)]="form.password" class="input sign-in-form__input-inner" placeholder="Password">
+    </div>
+
+  </div>
+
+  <button ion-button large round block (click)="signIn()">Sign In</button>
+
+</div>

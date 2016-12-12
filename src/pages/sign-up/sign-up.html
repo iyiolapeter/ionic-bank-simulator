@@ -1,0 +1,20 @@
+<ion-content>
+
+  <div class="sign-up-page-content" padding-horizontal>
+
+    <h1>Create your first account!</h1>
+
+    <div class="sign-up">
+      <sign-up-form (formSubmitted)="formSubmitted($event)"></sign-up-form>
+    </div>
+
+  </div>
+
+  <div class="backward-button">
+    <button ion-button icon-left clear round large (click)="back($event)">
+      <ion-icon name="arrow-back"></ion-icon>
+      Back to Sign In
+    </button>
+  </div>
+
+</ion-content>

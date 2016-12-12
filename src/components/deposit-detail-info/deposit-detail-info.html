@@ -1,0 +1,14 @@
+<div class="deposit-detail-info">
+  <div class="deposit-detail-info__inner">
+
+    <div class="deposit-detail-info__balance">{{deposit.Account.Currency.symbol}}{{deposit.Account.balance.toFixed(deposit.Account.Currency.exponent) | money}}</div>
+    <div class="deposit-detail-info__account-number">Account number: {{deposit.Account.number}}</div>
+
+    <div class="deposit-detail-info__actions">
+      <button ion-button round class="deposit-detail-info__action-button" (click)="transferMoney()">
+        <ion-icon name="swap"></ion-icon>
+      </button>
+    </div>
+
+  </div>
+</div>

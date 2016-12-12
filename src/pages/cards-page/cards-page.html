@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>My cards</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-refresher (ionRefresh)="refresh($event)">
+    <ion-refresher-content pullingText="Pull to refresh"
+                           refreshingText="Updating...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <div class="cards" padding>
+    <bank-card [card]="card" *ngFor="let card of cards" (click)="openCard(card)"></bank-card>
+
+    <div class="cards__not-yet" *ngIf="!cards || cards.length === 0">You have no cards yet</div>
+  </div>
+
+  <ion-fab bottom right #fab>
+    <button ion-fab>
+      <ion-icon name="add"></ion-icon>
+    </button>
+    <ion-fab-list side="top">
+      <button ion-fab (click)="itemTapped('new-card', fab)">
+        <ion-icon name="card"></ion-icon>
+      </button>
+    </ion-fab-list>
+  </ion-fab>
+
+</ion-content>

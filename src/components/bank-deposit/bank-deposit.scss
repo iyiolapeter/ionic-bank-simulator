@@ -1,0 +1,41 @@
+@import "../../theme/mixin";
+
+bank-deposit {
+  display: block;
+  &:not(:last-of-type) {
+    margin-bottom: 15px;
+  }
+
+  .bank-deposit {
+    background: #fff;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.3);
+    border-radius: 7px;
+    overflow: hidden;
+
+    &__title {
+      font-size: 2em;
+      color: #F7495E;
+    }
+
+    &__balance {
+      font-size: 1.5em;
+      line-height: 1.6em;
+    }
+
+    &__cc-number {
+      margin-top: 15px;
+      white-space: nowrap;
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 3px;
+    }
+
+    &__status {
+      text-transform: capitalize;
+    }
+  }
+}

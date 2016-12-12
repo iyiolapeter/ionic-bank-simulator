@@ -1,0 +1,11 @@
+<div class="bank-deposit">
+  <div class="bank-deposit__inner" padding>
+    <div class="bank-deposit__title">{{deposit?.title}}</div>
+    <div class="bank-deposit__balance">{{deposit?.Account.Currency.symbol}}{{deposit?.Account.balance.toFixed(deposit?.Account.Currency.exponent) | money}}</div>
+    <div class="bank-deposit__cc-number">Account number: <b>{{deposit?.Account.number}}</b></div>
+    <div class="bank-deposit__info">
+      <div class="bank-deposit__rate">Annual interest rate: <b>{{deposit.annualInterest}}%</b></div>
+      <div class="bank-deposit__status">{{deposit.status}}</div>
+    </div>
+  </div>
+</div>

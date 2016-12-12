@@ -1,0 +1,39 @@
+page-sign-up {
+  font-size: 1.2em !important;
+
+  ion-content {
+    background: #F7475D url(../assets/image/background-app.png) no-repeat center center / cover;
+  }
+
+  .sign-up {
+    margin: 30px auto 0;
+    width: 80%;
+  }
+
+  .backward-button {
+    position: relative;
+    display: block;
+    text-align: center;
+
+    button {
+      color: rgba(#fff, .9) !important;
+    }
+  }
+
+  .sign-up-page-content {
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+
+  h1 {
+    color: rgba(#fff, .9);
+    text-align: center;
+    width: 100%;
+    font-size: 3em;
+  }
+}

@@ -1,0 +1,91 @@
+@import "../../theme/mixin";
+
+bank-card {
+  display: block;
+  &:not(:last-of-type) {
+    margin-bottom: 15px;
+  }
+
+  .bank-card {
+    background: #fff;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.3);
+    border-radius: 7px;
+    overflow: hidden;
+
+    &__scheme-icon {
+      width: 50px;
+      height: 40px;
+      background: rgba(0,0,0,.1);
+      border-radius: 4px;
+    }
+
+    &__bs-icon {
+      width: 68px;
+      height: 40px;
+      position: relative;
+
+      &.mastercard {
+        &:after, &:before {
+          position: absolute;
+          content: '';
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background: rgba(0, 0, 0, 0.1);
+        }
+        &:after {
+          left: 0;
+        }
+        &:before {
+          right: 0;
+          background: rgba(0, 0, 0, .15);
+        }
+      }
+      &.visa {
+        height: 40px;
+        position: relative;
+        font-weight: 600;
+        font-size: 2.5em;
+        color: rgba(0,0,0,.2);
+        letter-spacing: -1.99px;
+
+        &:before {
+          display: inline;
+          white-space: nowrap;
+          content: 'visa';
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    &__images {
+      margin-top: 5px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &__title {
+      font-size: 2em;
+      color: #F7495E;
+    }
+
+    &__balance {
+      font-size: 1.5em;
+      line-height: 1.6em;
+    }
+
+    &__cc-number {
+      font-size: 1.7em;
+      margin-top: 15px;
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: row;
+      padding-right: 100px;
+      justify-content: space-between;
+      margin-top: 3px;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+<div class="account-history-item">
+
+  <div class="account-history-item__inner">
+
+    <div [ngSwitch]="item?.type">
+      <div *ngSwitchCase="'income_client_transfer'">
+        <ion-item>
+          <ion-avatar item-left>
+            <img src="{{item?.fromAccount.User.photo}}">
+          </ion-avatar>
+          <h2 class="account-history-item__title">{{item?.fromAccount.User.fullName}}</h2>
+          <h3>{{item?.balanceChangeDate | date:'medium'}}</h3>
+          <p class="account-history-item__account-number">Account: {{item?.fromAccount.number}}</p>
+          <p item-right class="account-history-item__change income">+{{item?.balanceChange.toFixed(2) | money}}</p>
+        </ion-item>
+      </div>
+
+      <div *ngSwitchCase="'outgoing_client_transfer'">
+        <ion-item>
+          <ion-avatar item-left>
+            <img src="{{item?.toAccount.User.photo}}">
+          </ion-avatar>
+          <h2 class="account-history-item__title">{{item?.toAccount.User.fullName}}</h2>
+          <h3>{{item?.balanceChangeDate | date:'medium'}}</h3>
+          <p class="account-history-item__account-number">Account: {{item?.toAccount.number}}</p>
+          <p item-right class="account-history-item__change outgoing">{{item?.balanceChange.toFixed(2) | money}}</p>
+        </ion-item>
+      </div>
+
+      <div *ngSwitchCase="'income_deposit_reward'">
+        <ion-item>
+          <ion-avatar item-left>
+            <img src="">
+          </ion-avatar>
+          <h2 class="account-history-item__title">
+            <span style="font-weight: normal; color: #555; font-size: .7em;">Reward</span>
+            {{item?.fromDeposit.title}}
+          </h2>
+          <h3>{{item?.balanceChangeDate | date:'medium'}}</h3>
+          <p item-right class="account-history-item__change income">+{{item?.balanceChange.toFixed(2) | money}}</p>
+        </ion-item>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

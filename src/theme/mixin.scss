@@ -1,0 +1,32 @@
+
+/**
+ * Extended mixin taken from angular-material (@see )
+ * @param {string} $color - color for input placeholder
+ * @param {:hover|:active|:focus|null} $target-pseudo - parent pseudo-class
+ * E.g.: @include input-placeholder-color(#faf);
+ * E.g.: @include input-placeholder-color(#faf, (hover: #ff0));
+ * E.g.: @include input-placeholder-color(#faf, (hover: #ff0, active: #0ff), false) {
+ *    transition: all .2s ease;
+ * }
+ */
+@mixin input-placeholder-color($color, $target-pseudo-colors: (), $contentInBase: true) {
+  $pseudos: '::-webkit-input-placeholder', ':-moz-placeholder', '::-moz-placeholder',
+  ':-ms-input-placeholder',  '::-webkit-input-placeholder';
+
+  @each $pseudo in $pseudos {
+    &#{$pseudo} {
+      color: $color;
+      @if ($contentInBase) {
+        @content;
+      }
+    }
+    @each $target-pseudo, $target-pseudo-color in $target-pseudo-colors {
+      &:#{$target-pseudo}#{$pseudo} {
+        color: $target-pseudo-color;
+        @if (not $contentInBase) {
+          @content;
+        }
+      }
+    }
+  }
+}

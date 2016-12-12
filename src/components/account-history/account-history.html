@@ -1,0 +1,7 @@
+<div class="account-history">
+
+  <account-history-item *ngFor="let historyItem of history" [item]="historyItem"></account-history-item>
+
+  <div class="account-history__no-history" *ngIf="!history || history.length === 0">No history yet</div>
+
+</div>
